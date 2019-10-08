@@ -7,6 +7,7 @@ target 'EngineerAiTest' do
 	pod 'RxSwift'
 	pod 'RxCocoa'
     pod 'RxAlamofire'
+    pod 'SwiftyJSON'
   # Pods for EngineerAiTest
 
 end

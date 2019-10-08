@@ -16,6 +16,10 @@
 		12FEEBDB234C52C80075A580 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FEEBDA234C52C80075A580 /* PostListViewModel.swift */; };
 		12FEEBDD234C544F0075A580 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FEEBDC234C544F0075A580 /* BaseViewController.swift */; };
 		12FEEBDF234C54AB0075A580 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FEEBDE234C54AB0075A580 /* PostModel.swift */; };
+		12FEEBF3234C63FB0075A580 /* PostListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FEEBF2234C63FB0075A580 /* PostListInteractor.swift */; };
+		12FEEBF7234C64BD0075A580 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FEEBF5234C64BD0075A580 /* Webservice.swift */; };
+		12FEEBF8234C64BD0075A580 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FEEBF6234C64BD0075A580 /* Router.swift */; };
+		12FEEBFB234C66150075A580 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FEEBFA234C66150075A580 /* Reachability.swift */; };
 		7E38408A5E71C30C4AC0369B /* Pods_EngineerAiTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE3CAA3F9E4249DF8FAD1AF /* Pods_EngineerAiTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +37,10 @@
 		12FEEBDA234C52C80075A580 /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
 		12FEEBDC234C544F0075A580 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		12FEEBDE234C54AB0075A580 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		12FEEBF2234C63FB0075A580 /* PostListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListInteractor.swift; sourceTree = "<group>"; };
+		12FEEBF5234C64BD0075A580 /* Webservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
+		12FEEBF6234C64BD0075A580 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		12FEEBFA234C66150075A580 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		F6E9C5574F4F42652D5D0215 /* Pods-EngineerAiTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EngineerAiTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EngineerAiTest/Pods-EngineerAiTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,7 +77,8 @@
 		12FEEBC1234C50DA0075A580 /* EngineerAiTest */ = {
 			isa = PBXGroup;
 			children = (
-				12FEEBE3234C5A670075A580 /* ApiClient */,
+				12FEEBF9234C66020075A580 /* Helper */,
+				12FEEBF4234C64BD0075A580 /* Network Layer */,
 				12FEEBE2234C57610075A580 /* PostList */,
 				12FEEBE1234C57520075A580 /* BaseView */,
 				12FEEBE0234C57470075A580 /* AppRelated */,
@@ -132,6 +141,7 @@
 		12FEEBE2234C57610075A580 /* PostList */ = {
 			isa = PBXGroup;
 			children = (
+				12FEEBF1234C63E70075A580 /* Interactor */,
 				12FEEBD7234C51CB0075A580 /* View */,
 				12FEEBD6234C51030075A580 /* Model */,
 				12FEEBD5234C50F40075A580 /* ViewControllers */,
@@ -140,11 +150,29 @@
 			path = PostList;
 			sourceTree = "<group>";
 		};
-		12FEEBE3234C5A670075A580 /* ApiClient */ = {
+		12FEEBF1234C63E70075A580 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				12FEEBF2234C63FB0075A580 /* PostListInteractor.swift */,
 			);
-			path = ApiClient;
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		12FEEBF4234C64BD0075A580 /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				12FEEBF5234C64BD0075A580 /* Webservice.swift */,
+				12FEEBF6234C64BD0075A580 /* Router.swift */,
+			);
+			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		12FEEBF9234C66020075A580 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				12FEEBFA234C66150075A580 /* Reachability.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		77286E461B1EBEEB2EE53BB9 /* Frameworks */ = {
@@ -269,6 +297,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -279,6 +308,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -294,9 +324,13 @@
 			files = (
 				12FEEBDD234C544F0075A580 /* BaseViewController.swift in Sources */,
 				12FEEBDF234C54AB0075A580 /* PostModel.swift in Sources */,
+				12FEEBF7234C64BD0075A580 /* Webservice.swift in Sources */,
 				12FEEBDB234C52C80075A580 /* PostListViewModel.swift in Sources */,
+				12FEEBF8234C64BD0075A580 /* Router.swift in Sources */,
 				12FEEBD9234C51F10075A580 /* PostListCell.swift in Sources */,
 				12FEEBC5234C50DA0075A580 /* ViewController.swift in Sources */,
+				12FEEBF3234C63FB0075A580 /* PostListInteractor.swift in Sources */,
+				12FEEBFB234C66150075A580 /* Reachability.swift in Sources */,
 				12FEEBC3234C50DA0075A580 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,11 +14,13 @@ class PostListCell: UITableViewCell {
     @IBOutlet weak var lblCreatedDate: UILabel!
     @IBOutlet weak var switchAtivate: UISwitch!
     
-    var postListModel: PostListModel? {
+    var postListModel: Post? {
         didSet {
-            self.lblPostName.text = postListModel?.name
-            self.lblCreatedDate.text = postListModel?.createdDate
+            self.lblPostName.text = postListModel?.title
+            self.lblCreatedDate.text = postListModel?.createdAt
+            self.switchAtivate.isOn = postListModel?.isActivated ?? false
         }
+        
     }
     
     override func awakeFromNib() {
