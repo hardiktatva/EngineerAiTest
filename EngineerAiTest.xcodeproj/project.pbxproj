@@ -20,6 +20,8 @@
 		12FEEBF7234C64BD0075A580 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FEEBF5234C64BD0075A580 /* Webservice.swift */; };
 		12FEEBF8234C64BD0075A580 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FEEBF6234C64BD0075A580 /* Router.swift */; };
 		12FEEBFB234C66150075A580 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FEEBFA234C66150075A580 /* Reachability.swift */; };
+		12FEEBFD234C71BC0075A580 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FEEBFC234C71BC0075A580 /* Extension.swift */; };
+		12FEEBFF234C71EE0075A580 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FEEBFE234C71EE0075A580 /* Response.swift */; };
 		7E38408A5E71C30C4AC0369B /* Pods_EngineerAiTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE3CAA3F9E4249DF8FAD1AF /* Pods_EngineerAiTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		12FEEBF5234C64BD0075A580 /* Webservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 		12FEEBF6234C64BD0075A580 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		12FEEBFA234C66150075A580 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		12FEEBFC234C71BC0075A580 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		12FEEBFE234C71EE0075A580 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		F6E9C5574F4F42652D5D0215 /* Pods-EngineerAiTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EngineerAiTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EngineerAiTest/Pods-EngineerAiTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				12FEEBFA234C66150075A580 /* Reachability.swift */,
+				12FEEBFC234C71BC0075A580 /* Extension.swift */,
+				12FEEBFE234C71EE0075A580 /* Response.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -326,6 +332,8 @@
 				12FEEBDF234C54AB0075A580 /* PostModel.swift in Sources */,
 				12FEEBF7234C64BD0075A580 /* Webservice.swift in Sources */,
 				12FEEBDB234C52C80075A580 /* PostListViewModel.swift in Sources */,
+				12FEEBFF234C71EE0075A580 /* Response.swift in Sources */,
+				12FEEBFD234C71BC0075A580 /* Extension.swift in Sources */,
 				12FEEBF8234C64BD0075A580 /* Router.swift in Sources */,
 				12FEEBD9234C51F10075A580 /* PostListCell.swift in Sources */,
 				12FEEBC5234C50DA0075A580 /* ViewController.swift in Sources */,

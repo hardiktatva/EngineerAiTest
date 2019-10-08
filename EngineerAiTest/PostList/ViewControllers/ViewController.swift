@@ -75,6 +75,13 @@ class ViewController: BaseViewController {
             }
         }).disposed(by: disposBag)
         
+        tableViewPostList.rx.willDisplayCell
+            .subscribe(onNext: { cell, indexPath in
+                if indexPath.row == self.viewModel.posts.value.count - 3 {
+                    self.viewModel.pageNumber += 1
+                    self.viewModel.getPostList(page: self.viewModel.pageNumber)
+                }
+            }).disposed(by: disposBag)
     }
 }
 
@@ -83,17 +90,13 @@ extension ViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let cell = tableView.cellForRow(at: indexPath) as? PostListCell {
-              cell.switchAtivate.isOn = !cell.switchAtivate.isOn
-            
-            var modelSelected = self.viewModel.posts.value[indexPath.row]
-            modelSelected.isActivated = cell.switchAtivate.isOn
-    
+            cell.switchAtivate.isOn = !cell.switchAtivate.isOn
             if cell.switchAtivate.isOn {
               self.viewModel.selectedPost += 1
             } else {
                 self.viewModel.selectedPost -= 1
             }
-            let count = self.viewModel.selectPost(index: indexPath.row)
+            self.viewModel.selectPost(index: indexPath.row)
             self.setTitle()
         }
     }

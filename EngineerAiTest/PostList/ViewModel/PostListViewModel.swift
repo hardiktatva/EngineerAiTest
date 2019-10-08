@@ -29,11 +29,10 @@ final class PostListViewModel {
     var selectedPost:Int = 0
     var pageNumber:Int = 1
     
-    func selectPost(index: Int) -> Int {
+    func selectPost(index: Int) {
         var postsTemp = self.posts.value
         postsTemp[index].isActivated = !postsTemp[index].isActivated
         self.posts.accept(postsTemp)
-        return postsTemp.filter { $0.isActivated }.count
     }
 
 }
@@ -44,7 +43,12 @@ extension PostListViewModel  {
         PostsListInteractor.getPosts(page: page).subscribe(onNext: { [weak self] response in
             guard let `self` = self else { return }
             if let posts = response.data as? [Post] {
-                self.posts.accept(posts)
+                if self.posts.value.count == 0 {
+                    self.posts.accept(posts)
+                } else {
+                    self.posts.accept(self.posts.value + posts)
+                }
+                
                 self.state.onNext(.success(self))
                 self.pageNumber = self.pageNumber + 1
             } else {

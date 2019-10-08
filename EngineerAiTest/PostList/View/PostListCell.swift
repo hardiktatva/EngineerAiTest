@@ -20,7 +20,6 @@ class PostListCell: UITableViewCell {
             self.lblCreatedDate.text = postListModel?.createdAt
             self.switchAtivate.isOn = postListModel?.isActivated ?? false
         }
-        
     }
     
     override func awakeFromNib() {
