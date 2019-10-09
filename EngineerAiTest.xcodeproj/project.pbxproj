@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12BECFC4234D9786009C1827 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BECFC3234D9786009C1827 /* DateHelper.swift */; };
 		12FEEBC3234C50DA0075A580 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FEEBC2234C50DA0075A580 /* AppDelegate.swift */; };
 		12FEEBC5234C50DA0075A580 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FEEBC4234C50DA0075A580 /* ViewController.swift */; };
 		12FEEBC8234C50DA0075A580 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12FEEBC6234C50DA0075A580 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		09AE165FA835D56F18F1CAAF /* Pods-EngineerAiTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EngineerAiTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-EngineerAiTest/Pods-EngineerAiTest.release.xcconfig"; sourceTree = "<group>"; };
 		0EE3CAA3F9E4249DF8FAD1AF /* Pods_EngineerAiTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EngineerAiTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		12BECFC3234D9786009C1827 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		12FEEBBF234C50DA0075A580 /* EngineerAiTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EngineerAiTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12FEEBC2234C50DA0075A580 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12FEEBC4234C50DA0075A580 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				12FEEBFA234C66150075A580 /* Reachability.swift */,
 				12FEEBFC234C71BC0075A580 /* Extension.swift */,
 				12FEEBFE234C71EE0075A580 /* Response.swift */,
+				12BECFC3234D9786009C1827 /* DateHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				12FEEBFD234C71BC0075A580 /* Extension.swift in Sources */,
 				12FEEBF8234C64BD0075A580 /* Router.swift in Sources */,
 				12FEEBD9234C51F10075A580 /* PostListCell.swift in Sources */,
+				12BECFC4234D9786009C1827 /* DateHelper.swift in Sources */,
 				12FEEBC5234C50DA0075A580 /* ViewController.swift in Sources */,
 				12FEEBF3234C63FB0075A580 /* PostListInteractor.swift in Sources */,
 				12FEEBFB234C66150075A580 /* Reachability.swift in Sources */,

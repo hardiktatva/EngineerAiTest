@@ -12,41 +12,25 @@ import RxSwift
 
 class ViewController: BaseViewController {
 
-    @IBOutlet weak var tableViewPostList: UITableView!
-    var viewModel = PostListViewModel()
-    lazy var refreshControl: UIRefreshControl = {
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action:
-            #selector(ViewController.handleRefresh(_:)),
-                                 for: UIControl.Event.valueChanged)
-        return refreshControl
-    }()
+    @IBOutlet private weak var tableViewPostList: UITableView!
+    @IBOutlet private weak var loadingView: UIActivityIndicatorView!
     
+    var viewModel = PostListViewModel()
     // MARK: - Life Cycle Method
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupUI()
+        self.getPostList()
         self.setupBinding()
         // Do any additional setup after loading the view.
     }
     
     // MARK: - Custom Method
-    private func setupUI() {
-        self.tableViewPostList.refreshControl = refreshControl
-        tableViewPostList.rx.setDelegate(self).disposed(by: disposBag)
+    private func getPostList() {
         self.viewModel.getPostList(page: self.viewModel.pageNumber)
-        self.navigationItem.title = "selected posts"
-    }
-    
-    @objc private func handleRefresh(_ refreshControl: UIRefreshControl) {
-        self.viewModel.selectedPost = 0
-        self.setTitle()
-        self.viewModel.pageNumber = 1
-        self.viewModel.getPostList(page:self.viewModel.pageNumber)
     }
     
     private func setTitle() {
-        self.navigationItem.title = "selected posts(\(self.viewModel.selectedPost))"
+        self.navigationItem.title = "Total posts(\(self.viewModel.posts.value.count))"
     }
     private func setupBinding() {
     
@@ -59,25 +43,24 @@ class ViewController: BaseViewController {
             switch state {
             case .loading:
                 print("laoding")
+                self.loadingView.startAnimating()
             case .finish(let finishPaging):
                 if finishPaging {
-                    
-                } else {
-                    
+                    self.loadingView.stopAnimating()
                 }
             case .failure(let error):
                 print(error.localizedDescription)
+                self.loadingView.stopAnimating()
             case .success:
                 print("success")
-                if self.refreshControl.isRefreshing {
-                    self.refreshControl.endRefreshing()
-                }
+                self.loadingView.stopAnimating()
+                self.setTitle()
             }
         }).disposed(by: disposBag)
         
         tableViewPostList.rx.willDisplayCell
             .subscribe(onNext: { cell, indexPath in
-                if indexPath.row == self.viewModel.posts.value.count - 3 {
+                if indexPath.row == self.viewModel.posts.value.count - 2 {
                     self.viewModel.pageNumber += 1
                     self.viewModel.getPostList(page: self.viewModel.pageNumber)
                 }
@@ -85,19 +68,4 @@ class ViewController: BaseViewController {
     }
 }
 
-extension ViewController : UITableViewDelegate {
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if let cell = tableView.cellForRow(at: indexPath) as? PostListCell {
-            cell.switchAtivate.isOn = !cell.switchAtivate.isOn
-            if cell.switchAtivate.isOn {
-              self.viewModel.selectedPost += 1
-            } else {
-                self.viewModel.selectedPost -= 1
-            }
-            self.viewModel.selectPost(index: indexPath.row)
-            self.setTitle()
-        }
-    }
-}

@@ -31,41 +31,39 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcL-lV-biT">
-                                                    <rect key="frame" x="20" y="14.5" width="303" height="20"/>
+                                                    <rect key="frame" x="20" y="14.5" width="364" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39p-gq-SeR">
-                                                    <rect key="frame" x="20" y="44.5" width="303" height="20.5"/>
+                                                    <rect key="frame" x="20" y="44.5" width="364" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sab-v2-yFK">
-                                                    <rect key="frame" x="343" y="24.5" width="51" height="31"/>
-                                                </switch>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="zcL-lV-biT" firstAttribute="top" secondItem="73C-dE-jy9" secondAttribute="top" constant="14.5" id="AwC-PW-P64"/>
-                                                <constraint firstItem="sab-v2-yFK" firstAttribute="leading" secondItem="zcL-lV-biT" secondAttribute="trailing" constant="20" id="JLW-0f-XtD"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="zcL-lV-biT" secondAttribute="trailing" constant="10" id="OUC-vB-H1G"/>
                                                 <constraint firstItem="zcL-lV-biT" firstAttribute="leading" secondItem="73C-dE-jy9" secondAttribute="leading" constant="20" id="USa-T3-m2W"/>
                                                 <constraint firstItem="39p-gq-SeR" firstAttribute="leading" secondItem="zcL-lV-biT" secondAttribute="leading" id="Y3f-bk-a4N"/>
                                                 <constraint firstAttribute="bottom" secondItem="39p-gq-SeR" secondAttribute="bottom" constant="14.5" id="bgp-kv-dNC"/>
                                                 <constraint firstItem="39p-gq-SeR" firstAttribute="trailing" secondItem="zcL-lV-biT" secondAttribute="trailing" id="hIC-GO-g2M"/>
                                                 <constraint firstItem="39p-gq-SeR" firstAttribute="top" secondItem="zcL-lV-biT" secondAttribute="bottom" constant="10" id="rdh-JB-UBx"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="sab-v2-yFK" secondAttribute="trailing" constant="2" id="rtU-d6-Hrz"/>
-                                                <constraint firstItem="sab-v2-yFK" firstAttribute="centerY" secondItem="73C-dE-jy9" secondAttribute="centerY" id="xYm-7X-ieg"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lblCreatedDate" destination="39p-gq-SeR" id="JWq-9g-KTF"/>
                                             <outlet property="lblPostName" destination="zcL-lV-biT" id="nyr-BK-VQy"/>
-                                            <outlet property="switchAtivate" destination="sab-v2-yFK" id="rzV-sZ-eOE"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="tcf-Dt-EQC">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -78,6 +76,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="BjY-Wt-yEa"/>
                     <connections>
+                        <outlet property="loadingView" destination="tcf-Dt-EQC" id="FaZ-wv-Gsa"/>
                         <outlet property="tableViewPostList" destination="lFc-vf-e16" id="Oh9-Rx-pgb"/>
                     </connections>
                 </viewController>

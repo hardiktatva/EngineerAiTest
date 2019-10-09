@@ -12,13 +12,10 @@ class PostListCell: UITableViewCell {
 
     @IBOutlet weak var lblPostName: UILabel!
     @IBOutlet weak var lblCreatedDate: UILabel!
-    @IBOutlet weak var switchAtivate: UISwitch!
-    
     var postListModel: Post? {
         didSet {
             self.lblPostName.text = postListModel?.title
-            self.lblCreatedDate.text = postListModel?.createdAt
-            self.switchAtivate.isOn = postListModel?.isActivated ?? false
+            self.lblCreatedDate.text = DateHelper.dateInFormate(date: postListModel?.createdAt ?? "")
         }
     }
     
@@ -26,7 +23,7 @@ class PostListCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
