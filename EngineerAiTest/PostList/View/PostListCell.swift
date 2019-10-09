@@ -15,7 +15,7 @@ class PostListCell: UITableViewCell {
     var postListModel: Post? {
         didSet {
             self.lblPostName.text = postListModel?.title
-            self.lblCreatedDate.text = DateHelper.dateInFormate(date: postListModel?.createdAt ?? "")
+            self.lblCreatedDate.text = "Created Date: \(DateHelper.dateInFormate(date: postListModel?.createdAt ?? ""))"
         }
     }
     

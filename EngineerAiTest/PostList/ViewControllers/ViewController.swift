@@ -32,6 +32,7 @@ class ViewController: BaseViewController {
     private func setTitle() {
         self.navigationItem.title = "Total posts(\(self.viewModel.posts.value.count))"
     }
+    
     private func setupBinding() {
     
         viewModel.posts.asObservable().bind(to: tableViewPostList.rx.items(cellIdentifier: "postCell", cellType: PostListCell.self)) { (_, post: Post, cell) in
